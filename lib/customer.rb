@@ -18,13 +18,15 @@ class Customer
   end
 
   def meals
-  Meal.all.select do |meal|
-    meal.customer == self                 #returning only the ones where the meal's customer matches the current customer instance
+    Meal.all.select do |meal|
+      meal.customer == self                 #returning only the ones where the meal's customer matches the current customer instance
+    end
   end
 
   def waiters
-  meals.map do |meal|
-    meal.waiter
+    meals.map do |meal|
+      meal.waiter
+    end
   end
 
 end
