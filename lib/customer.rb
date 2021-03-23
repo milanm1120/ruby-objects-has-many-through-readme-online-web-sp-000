@@ -19,7 +19,12 @@ class Customer
 
   def meals
   Meal.all.select do |meal|
-    meal.customer == self
+    meal.customer == self                 #returning only the ones where the meal's customer matches the current customer instance
+  end
+
+  def waiters
+  meals.map do |meal|
+    meal.waiter
   end
 
 end
